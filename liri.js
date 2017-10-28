@@ -20,6 +20,10 @@ if (command === "movie-this") {
     movieSearch();
 }
 
+// if (command === "do-what-it-says") {
+//     printTxt();
+// }
+
 // TWITTER
 function printTweets() {
 
@@ -77,14 +81,13 @@ return;
 function movieSearch() {
     var request = require("request");
 
-    // Then run a request to the OMDB API with the movie specified
+    //Request to the OMDB API with the movie specified
     request("http://www.omdbapi.com/?t=" + title + "&apikey=40e9cece", function (error, response, body) {
 
         // If the request is successful (i.e. if the response status code is 200)
         if (!error && response.statusCode === 200) {
 
             //Console logs for parse data from OMDB
-            // console.log(JSON.parse(body));
             console.log("Title: " + JSON.parse(body).Title);
             console.log("Year: " + JSON.parse(body).Year);
             console.log("IMDB Rating: " + JSON.parse(body).imdbRating);
@@ -98,3 +101,8 @@ function movieSearch() {
     });
 };
 return;
+
+// //DO WHAT IT SAYS
+// function printTxt() {
+// Had some trouble trying to figure this out. Going to wait for the solution. 
+// }
